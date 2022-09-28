@@ -1,26 +1,14 @@
 :root {
 	--main-color: #E61739;
 	
+	--appearance: rgba(255, 255, 255, 1);
+	--gray-0: rgba(0, 0, 0, 0.1);
 	--gray-1: rgba(0, 0, 0, 0.2);
 	--gray-2: rgba(0, 0, 0, 0.3);
 	--gray-3: rgba(0, 0, 0, 0.4);
 	--gray-4: rgba(0, 0, 0, 0.5);
 	--gray-5: rgba(0, 0, 0, 0.6);
  }
-
-.tarjeta {
-	/* background-color: var(--gray-1); */
-	color: white;
-	border-radius: 35px;
-}
-
-.boton {
-	background-color: var(--gray-3);
-	color: white;
-	border-radius: 35px;
-	margin-top: 15px;
-	padding: 20px;
-}
 
 *, *::before, *::after {
 	margin: 0;
@@ -42,7 +30,11 @@
 	display: none;
 }
 
-.contenedor {
+body {
+	background-color: beige;
+}
+
+.crd-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -53,25 +45,66 @@
 	margin: auto;
 }
 
-	.tarjeta {
+	.card {
+		/* animation-duration: 1s;
+		animation-name: slidein; */
+
+		/* background-color: var(--gray-1); */
+		border-radius: 35px;
 		min-height: 400px;
 		overflow: scroll;
 
 
 		display: flex;
 		flex-direction: column;
+
+		box-shadow: 0px 0px 15px 10px var(--gray-3);
 	}
 
-		.arriba {
-			background-color: var(--gray-4);
-			padding: 20px;
-			border-radius: 35px 35px 0 0;
-			border-bottom: 1px solid var(--gray-3);
-			box-shadow: 0px 0px 25px 15px var(--gray-5);
+	/* @keyframes slidein {
+		from {
+			margin-left:100%;
+			width:100%
 		}
 
-		.medio {
-			background-color: var(--gray-2);
+		to {
+			margin-left:0%;
+			width:100%;
+		}
+	} */
+
+		.top-crd {
+			background-color: var(--appearance);
+			padding: 20px;
+			border-radius: 35px 35px 0 0;
+			border-bottom: 1px solid var(--gray-1);
+			/* box-shadow: 0px 0px 25px 15px red; */
+		}
+
+			.title-y-closeicon {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+				.title-card {
+					font-size: 25px;
+					font-weight: 800;
+					color: var(--main-color);
+				}
+
+				.close-icon-card {
+					stroke: var(--main-color);
+				}
+
+			.description {
+				font-size: 15px;
+				font-weight: 400;
+				margin-top: 10px;
+			}
+
+		.middle-crd {
+			background-color: var(--appearance);
 			padding: 15px 20px;
 			overflow: scroll;
 
@@ -79,32 +112,107 @@
 			flex-grow: auto;
 		}
 
-			.imagen {
+			.img-crd {
 				width: 100%;
 				border-radius: 20px;
 			}
 
-		.abajo {
-			padding: 20px;
-			background-color: var(--gray-4);
+			.opt {
+				display: flex;
+				align-items: center;
+				
+			}
+
+			.opt-title {
+				margin-top: 20px;
+				font-size: 18pt;
+			}
+
+			.opt-container {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 20px;
+				font-size: 14pt;
+			}
+
+			.icon-opcion {
+				stroke: var(--main-color);
+				margin-right: 10px;
+			}
+
+		.bottom-crd {
+			padding: 25px 35px 25px 25px;
+			background-color: var(--appearance);
 			border-radius: 0 0 35px 35px;
 
-			border-top: 1px solid #E61739;
+			border-top: 1px solid var(--gray-1);
 			/* box-shadow: 0px 0px 25px 15px #abab9a; */
-			box-shadow: 0px 0px 25px 15px red;
+			box-shadow: 0px 0px 25px 15px var(--gray-0);
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 		}
 
-	.boton {
-		height: 70px;
+			.bg-icon {
+				width: 40px;
+				height: 40px;
+				background-color: var(--main-color);
+				border-radius: 50%;
+				border-style: none;
+				
+			}
+
+			.minus-icon {
+				margin-right: 20px;
+			}
+
+			.plus-icon {
+				margin-left: 20px;
+			}
+
+			.plus-minus-icons {
+				display: flex;
+				align-items: center;
+			}
+
+			.m-icon {
+				margin-top: 5px;
+				stroke: #FFF;
+			}
+
+			.p-icon {
+				margin-top: 5px;
+				stroke: #FFF;
+			}
+
+			.dis {
+				background-color: var(--gray-1);
+			}
+
+	.btn {
+		color: white;
+		font-size: 24px;
+		font-weight: 800;
+		border-radius: 50px;
+		margin-top: 15px;
+		padding: 22px 23px 23px 30px;
+		height: 75px;
+		background-color: var(--main-color);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-	.opcion {
-		margin-top: 20px;
-	}
+		.precio {
+			display: flex;
+			padding: 4px 10px 4px 10px;
+			height: 29px;
+			border-radius: 50px;
+			background-color: var(--gray-0);
+			font-size: 18px;
+		}
 
-body {
-	background-color: beige;
-}
 
 /* .contenedor {
 	display: none;
