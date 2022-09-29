@@ -27,7 +27,7 @@ and (orientation: portrait) {
 @media 
 only screen and (-webkit-min-device-pixel-ratio: 2) { 
 	:root {
-		font-size: 20pt;
+		font-size: 15pt;
 		--stroke-icon: 4;
 	}
 }
@@ -35,7 +35,7 @@ only screen and (-webkit-min-device-pixel-ratio: 2) {
 @media 
 only screen and (-webkit-min-device-pixel-ratio: 3) { 
 	:root {
-		font-size: 30pt;
+		font-size: 20pt;
 		--stroke-icon: 5;
 	}
 }
@@ -60,17 +60,26 @@ only screen and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 .crd-container {
+	position: absolute;
+	bottom: 0;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 
-	max-width: 41rem;
+	max-width: 50rem;
 	height: 100vh;
 
 	margin: auto;
 	padding: 1.5rem;
 
 	/* background-color: var(--gray-0); */
+}
+
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 1) { 
+	.crd-container {
+		max-width: 40rem;
 }
 
 	.card {
