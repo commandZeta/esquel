@@ -324,7 +324,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 		margin-top: 1.5rem;
 		padding: 2rem 1.5rem 2rem 3rem;
 
-		color: white;
+		color: #FFF;
 		font-size: 1.8rem;
 		font-weight: 800;
 		text-transform: uppercase;
@@ -354,7 +354,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 			margin-right: .7rem;
 
 			stroke: rgba(255, 255, 255, .8);
-			stroke-width: .1rem;
+			stroke-width: 1px;
 		}
 
 /* .contenedor {
