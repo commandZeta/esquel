@@ -66,12 +66,14 @@ only screen and (-webkit-min-device-pixel-ratio: 3) {
 
 html {
 	height: -webkit-fill-available;
+
 }
 
 body {
 	display: flex;
 	justify-content: center;
 	height: -webkit-fill-available;
+	max-height: 100vh;
 }
 
 .crd-container {
