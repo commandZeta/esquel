@@ -123,9 +123,6 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 	} */
 
 		.top-crd {
-			position: relative;
-			top: 0;
-
 			padding: 1.8rem 2rem 1.2rem 2.2rem;
 
 			background-color: var(--appearance);
@@ -262,9 +259,9 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 			}
 
 		.bottom-crd {
-			position: relative;
+			position: sticky;
 			bottom: 0;
-			
+
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -327,6 +324,9 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 			}
 
 	.btn {
+		position: sticky;
+		bottom: 0;
+
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
