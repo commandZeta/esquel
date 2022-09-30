@@ -68,9 +68,9 @@ body {
 }
 
 .crd-container {
-	overflow: scroll;
-	/* position: absolute;
-	bottom: 0; */
+	/* overflow: scroll; */
+	position: absolute;
+	bottom: 0;
 
 	display: flex;
 	flex-direction: column;
