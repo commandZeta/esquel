@@ -44,9 +44,11 @@ only screen and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 *, *::before, *::after {
+	box-sizing: border-box;
+	
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+
 	font-family: 'Nunito', sans-serif;
 	letter-spacing: -0.03rem;
 
@@ -76,9 +78,9 @@ body {
 	flex-direction: column;
 	justify-content: flex-end;
 
-	/* max-height: 100vh; */
+	max-height: 100vh;
 	max-width: 50rem;
-	height: 100vh;
+	/* height: calc(100vh - 8.7rem); */
 
 	margin: auto;
 	padding: 1.5rem;
@@ -121,6 +123,9 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 	} */
 
 		.top-crd {
+			position: relative;
+			top: 0;
+
 			padding: 1.8rem 2rem 1.2rem 2.2rem;
 
 			background-color: var(--appearance);
@@ -257,6 +262,9 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 			}
 
 		.bottom-crd {
+			position: relative;
+			bottom: 0;
+			
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
