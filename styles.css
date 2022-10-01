@@ -65,20 +65,20 @@ only screen and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 html {
-	height: 100%;
-    height: -webkit-fill-available;
-	height: -moz-available;
-	height: fill-available;
+	min-height: 100%;
+    min-height: -webkit-fill-available;
+	min-height: -moz-available;
+	min-height: fill-available;
 }
 
 body {
 	display: flex;
 	justify-content: center;
 
-	height: 100%;
-    height: -webkit-fill-available;
-	height: -moz-available;
-	height: fill-available;
+	min-height: 100%;
+    min-height: -webkit-fill-available;
+	min-height: -moz-available;
+	min-height: fill-available;
 }
 
 .crd-container {
