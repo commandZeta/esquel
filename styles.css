@@ -65,18 +65,20 @@ only screen and (-webkit-min-device-pixel-ratio: 3) {
 }
 
 html {
-	height: fill-available;
+	height: 100%;
     height: -webkit-fill-available;
 	height: -moz-available;
+	height: fill-available;
 }
 
 body {
 	display: flex;
 	justify-content: center;
 
-	height: fill-available;
+	height: 100%;
     height: -webkit-fill-available;
 	height: -moz-available;
+	height: fill-available;
 }
 
 .crd-container {
@@ -106,7 +108,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 }
 
 	.card {
-		overflow: scroll;
+		overflow: auto;
 
 		display: flex;
 		flex-direction: column;
@@ -185,7 +187,7 @@ only screen and (-webkit-min-device-pixel-ratio: 1) {
 			}
 
 		.middle-crd {
-			overflow: scroll;
+			overflow: auto;
 
 			padding: 1.2rem 1.8rem 1.8rem 1.8rem;
 
