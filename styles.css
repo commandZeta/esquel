@@ -517,8 +517,10 @@ card-slidein {
 }
 */
 
-.landscape {
-	display: none;
+@media (orientation: portrait) {
+	.landscape {
+		display: none;
+	}
 }
 
 @media (orientation: landscape) {
