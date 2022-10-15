@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html> -->
+
+<!-- PADDING EXTRAÑO: https://ilxanlar.medium.com/you-shouldnt-rely-on-css-100vh-and-here-s-why-1b4721e74487 -->
+
+<!-- TECLADO: https://blog.opendigerati.com/the-eccentric-ways-of-ios-safari-with-the-keyboard-b5aa3f34228d -->
+
+<!-- https://bugs.webkit.org/show_bug.cgi?id=141832 -->
+
+<!-- DEMO
+	https://8w.8thwall.app/ios-height-tests/
+	https://codepen.io/jparismorgan/pen/oNWqRoK -->
+
+<!-- UNIDADES MEDIDA VH: SVH (shortest), LVH (longest), and DVH (dynamic) -->
+
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+		<title>Esquel</title>
+		<link href="styles.css" rel="stylesheet">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=fallback" rel="stylesheet">
+		
+		<link rel="apple-touch-icon" href="img/apple-icon.png">
+	</head>
+
+	<body>
+		<div class="landscape">
+			<svg xmlns="http://www.w3.org/2000/svg" class="rotate-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>
+			<h1>Gire el dispositivo</h1>
+		</div>
+		<!-- <div class="index display">
+			<h1>Yakimeshi</h1>
+			<p>Demo 1.0.3</p>
+		</div> -->
+
+		<div class="crd-container">
+			<div class="card">
+
+				<!-- HEADER-CARD -->
+				<div class="top-crd">
+					<div class="title-y-closeicon">
+						<h1 class="title-card">Yakimeshi</h1>
+
+						<!-- close icon card-->
+						<button class="close-button">
+							<svg xmlns="http://www.w3.org/2000/svg" class="close-icon-card" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+						</button>
+					</div>
+
+					<p class="description">Salteado de arroz, huevo y vegetales al wok&nbsp;</p>
+				</div>
+
+				<!-- BODY-CARD -->
+				<div class="middle-crd">
+					<img src="img/yakimeshi.jpg" class="img-crd" alt="Yakimeshi">
+
+					<h3 class="opt-title">Adicional</h3>
+
+					<!-- Option -->
+					<div class="opt-container">
+						<div class="opt">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon-opcion" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+							<h4>Pollo</h4>
+						</div>
+						
+						<h4 class="opt-price">+ $ 190</h4>
+					</div>
+
+					<!-- Option -->
+					<div class="opt-container">
+						<div class="opt">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon-opcion" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+							<h4>Cerdo</h4>
+						</div>
+						
+						<h4 class="opt-price">+ $ 200</h4>
+					</div>
+
+					<!-- Option -->
+					<div class="opt-container">
+						<div class="opt">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon-opcion" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+							<h4>Lomo</h4>
+						</div>
+						
+						<h4 class="opt-price">+ $ 340</h4>
+					</div>
+
+					<!-- Option -->
+					<div class="opt-container">
+						<div class="opt">
+							<svg xmlns="http://www.w3.org/2000/svg" class="icon-opcion" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+							<h4>Salmón</h4>
+						</div>
+						
+						<h4 class="opt-price">+ $ 740</h4>
+					</div>
+
+					<!-- Notes -->
+					<input type="text" class="notas" placeholder="notas">
+				</div>
+
+				<!-- FOOTER-CARD -->
+				<div class="bottom-crd">
+					<div class="plus-minus-icons">
+						<button class="bg-icon minus-icon dis">
+							<svg xmlns="http://www.w3.org/2000/svg" class="m-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+						</button>
+
+						<div class="quant">1</div>
+
+						<button class="bg-icon plus-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" class="p-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+						</button>
+					</div>
+
+					<div class="amount">$ 1.060</div>
+				</div>
+			</div>
+	
+			<button class="btn">
+				<p>agregar</p>
+				<div class="total-price">
+					<svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
+					<p>$ 0.000</p>
+				</div>
+			</button>
+		</div>
+	</body>
+</html>

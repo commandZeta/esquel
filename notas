@@ -1,0 +1,15 @@
+
+
+PADDING EXTRAÑO: https://ilxanlar.medium.com/you-shouldnt-rely-on-css-100vh-and-here-s-why-1b4721e74487
+
+TECLADO: https://blog.opendigerati.com/the-eccentric-ways-of-ios-safari-with-the-keyboard-b5aa3f34228d
+
+https://bugs.webkit.org/show_bug.cgi?id=141832
+
+ DEMO
+	https://8w.8thwall.app/ios-height-tests/
+	https://codepen.io/jparismorgan/pen/oNWqRoK
+
+UNIDADES MEDIDA VH: SVH (shortest), LVH (longest), and DVH (dynamic)
+
+https://www.youtube.com/watch?v=bsAApv4rNlA
