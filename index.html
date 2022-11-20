@@ -1,218 +1,540 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		
-		<title>Esquel</title>
-
 		<link rel="shortcut icon" href="favicon.png">
+		<title>Esquel</title>
+		
 		<link href="card.css" rel="stylesheet">
 		<link href="main.css" rel="stylesheet">
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;0,800;1,200;1,400;1,600;1,800&display=fallback" rel="stylesheet">
+		
+		<!-- TEST UI -->
+		<!-- <link href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=Flow+Rounded&display=swap" rel="stylesheet">
+		<link href="test-ui.css" rel="stylesheet"> -->
+
+		<script defer type='text/javascript' src='price.js'></script>
+		<script defer type='text/javascript' src='script.js'></script>
+		<script defer type='text/javascript' src='animate.js'></script>
+		
+
 		<link rel="apple-touch-icon" href="img/apple-icon.png">
 	</head>
 
+	<!-- BLACKOUT -->
+		<span id="fade" class="hidden"></span>
+		<!-- <span id="blackout" style="z-index: 1;"></span> -->
+		<span id="blackout" class="hidden"></span>
+
 	<body>
+		<!-- <div class="landscape">
+			<svg xmlns="http://www.w3.org/2000/svg" class="rotate-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38"/></svg>
+			<h1>Gire el dispositivo</h1>
+		</div> -->
+
 		<div id="main" class="main-container">
 			<header>
 				<nav>
-					<div class="search search-active">
+					<div id="search" class="search">
 						<svg  class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.5 35.5">
-							<path class="search-icon" id="search-icon" data-name="search" d="M27,27l6,6ZM2.5,16.5a14,14,0,1,1,14,14A14,14,0,0,1,2.5,16.5Z" transform="translate(0 0)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+							<path data-name="search" d="M27,27l6,6ZM2.5,16.5a14,14,0,1,1,14,14A14,14,0,0,1,2.5,16.5Z" transform="translate(0 0)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
 						</svg>
-						<input id=search class="input-search input-search-active" type="search">
+						<input id="input-search" class="input-search-active" type="search">
 					</div>
 
-					<svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31.5">
+					<a id="logo" href="#" class="logo">
+						<img src="/img/logo.png" alt="meishi">
+					</a>
+
+					<div id="toggle-menu" class="menu">
+						<svg xmlns="http://www.w3.org/2000/svg" class="menu-icon-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+					</div>
+
+					<!-- <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31.5">
 						<g id="menu-icon" transform="translate(-346 -25)">
 							<line class="menu-icon" id="Línea_25" data-name="Línea 25" x2="31" transform="translate(348.5 27.5)" fill="none" stroke-linecap="round" stroke-width="5"/>
 							<line class="menu-icon" id="Línea_26" data-name="Línea 26" x2="31" transform="translate(348.5 40.75)" fill="none" stroke-linecap="round" stroke-width="5"/>
 							<line class="menu-icon" id="Línea_27" data-name="Línea 27" x2="31" transform="translate(348.5 54)" fill="none" stroke-linecap="round" stroke-width="5"/>
 						</g>
-					</svg>
+					</svg> -->
 				</nav>
+
+				<div id="searchToggle" class="toggle-menu-area hidden">
+					<dl id="searchList"> </dl>
+				</div>
 			</header>
 
 			<main>
 				<div class="contenido">
-					<div id="scroll-to" class="scroll-to">
-						<a href="#1">Entradas</a>
-						<a href="#2">Principal</a>
-						<a href="#3">Uramaki</a>
-						<a href="#4">Sashimi</a>
-						<a href="#5">Bebida</a>
-					</div>
+					<!-- WIDGET -->
+						<!-- <div class="s-container">
+							<div id="widget" class="item s-contenido">
+								<div class="storie">
+									<div class="s-top">
+										<div class="s-oferta">recomendado</div>
+										<div class="s-titulo">Yakimeshi</div>
+									</div>
+									<div class="s-descripcion">Salteado de arroz, huevo y&nbsp;vegetales al wok</div>
+								</div>
 
-					<br><h3 id="1">Entradas</h3><br>
-
-					<p>Harumaki<span>$ 740</span></p>
-					<p>Gyoza<span>$ 990</span></p>
-					<p>Ebi Furai<span>$ 1.530</span></p>
-
-					<div class="carrousel">
-						<div id="productTitle2" class="c-tarjeta">
-							<img src="img/yakimeshi.jpg" class="c-imagen" alt="Yakimeshi">
-							<div class="c-producto">
-								<p class="c-titulo">Yakimeshi</p>
-								<span class="c-precio">$ 990</span>
+								<img src="img/yakimeshi.jpg" id="imgcover" class="cover" alt="Yakimeshi">
 							</div>
+						</div> -->
+
+					<!-- MENU SCROLL X -->
+						<div class="scroll-to-nav">
+							<div id="scroll-to" class="scroll-to">
+								<a href="#1" draggable="false">Entradas</a>
+								<a href="#2" draggable="false">Principal</a>
+								<a href="#3" draggable="false">Uramaki</a>
+								<a href="#4" draggable="false">Sashimi</a>
+								<a href="#5" draggable="false">Bebida</a>
+							</div>
+							<span></span>
 						</div>
 
-						<div id="productTitle3" class="c-tarjeta">
-							<img src="img/yakimeshi.jpg" class="c-imagen" alt="Yakimeshi">
-							<div class="c-producto">
-								<p class="c-titulo">Yakimeshi</p>
-								<span class="c-precio">$ 990</span>
+						<!-- ENTRADAS -->
+							<div class="menu-section">
+								<h3 id="1">Entradas</h3>
+
+								<p class="item">Harumaki<span>$&nbsp;740</span></p>
+								<p class="item">Gyoza<span>$&nbsp;990</span></p>
+								<p class="item">Yakitori<span>$&nbsp;1.130</span></p>
+								<p class="item">Ebi Furai<span>$&nbsp;1.570</span></p>
 							</div>
-						</div>
 
-						<div id="productTitle4" class="c-tarjeta">
-							<img src="img/yakimeshi.jpg" class="c-imagen" alt="Yakimeshi">
-							<div class="c-producto">
-								<p class="c-titulo">Yakimeshi</p>
-								<span class="c-precio">$ 990</span>
+						<!-- MENU FOTOS -->
+							<div class="carrousel">
+								<div class="item c-tarjeta">
+									<img src="img/yakimeshi.jpg" class="c-imagen" alt="Yakimeshi">
+									<div class="c-producto">
+										<p class="c-titulo">Yakimeshi</p>
+										<span class="c-precio">$&nbsp;1.020</span>
+									</div>
+								</div>
+
+								<div class="item c-tarjeta">
+									<img src="img/ebifurai.jpg" class="c-imagen" alt="Yakimeshi">
+									<div class="c-producto">
+										<p class="c-titulo">Ebi Furai</p>
+										<span class="c-precio">$&nbsp;1.570</span>
+									</div>
+								</div>
+
+								<div class="item c-tarjeta">
+									<img src="img/sashimi.jpg" class="c-imagen" alt="Yakimeshi">
+									<div class="c-producto">
+										<p class="c-titulo">Sashimi</p>
+										<span class="c-precio">$&nbsp;1.510</span>
+									</div>
+								</div>
+
+								<div class="item c-tarjeta">
+									<img src="img/katsukare.jpg" class="c-imagen" alt="Yakimeshi">
+									<div class="c-producto">
+										<p class="c-titulo">Katsukare</p>
+										<span class="c-precio">$&nbsp;1.740</span>
+									</div>
+								</div>
 							</div>
-						</div>
 
-						<div id="productTitle5" class="c-tarjeta">
-							<img src="img/yakimeshi.jpg" class="c-imagen" alt="Yakimeshi">
-							<div class="c-producto">
-								<p class="c-titulo">Yakimeshi</p>
-								<span class="c-precio">$ 990</span>
+						<!-- PRINCIPAL -->
+							<div class="menu-section">
+								<h3 id="2">Principal</h3>
+
+								<div class="item item-img">
+									<img src="img/yakisoba.jpg" class="img-main-item" alt="Yakimeshi">
+
+									<div class="subr">
+										<span class="item-desc">
+											<p class="tit">Yakisoba<br></p>
+											<p class="desc">Salteado de fideos y vegetales</p>
+										</span>
+
+										<span class="price">$&nbsp;1.020</span>
+									</div>
+								</div>
+
+								<div class="item item-img">
+									<img src="img/katsudon.jpg" class="img-main-item" alt="Yakimeshi">
+									<!-- <span> -->
+									<div class="subr">
+										<span class="item-desc">
+											<p class="tit">Katsudon <br></p>
+											<p class="desc">Colchón de arroz cubierto de milanesa de&nbsp;cerdo, con huevo y cebolla</p>
+										</span>
+
+										<span class="price">$&nbsp;1.440</span>
+									</div>
+									<!-- </span> -->
+								</div>
+
+								<div class="item item-img">
+									<img src="img/butateridon.jpg" class="img-main-item" alt="Yakimeshi">
+
+									<div class="subr">
+										<span class="item-desc">
+											<p class="tit">Buta Teri Don<br></p>
+											<p class="desc">Colchón de arroz cubierto de cerdo agridulce, salteado con cebolla y hongos</p>
+										</span>
+
+										<span class="price">$&nbsp;1.440</span>
+									</div>
+								</div>
+
+								<div class="item item-img">
+									<img src="img/misoramen.jpg" class="img-main-item" alt="Yakimeshi">
+
+									<div class="subr">
+										<span class="item-desc">
+											<p class="tit">Miso Ramen<br></p>
+											<p class="desc">Fideos en exquisito caldo a base de miso con chashu, ajitsuke tamago, moyashi ...</p>
+										</span>
+
+										<span class="price">$&nbsp;1.540</span>
+									</div>
+								</div>
+
+								<p class="item">Miso Ramen<span>$&nbsp;1.540</span></p>
+								<p class="item">Shoyu Ramen<span>$&nbsp;1.540</span></p>
+								<p class="item">Oyakodon<span>$&nbsp;1.440</span></p>
+								<p class="item">Katsudon<span>$&nbsp;1.440</span></p>
 							</div>
+
+						<!-- URAMAKI -->
+							<div class="menu-section">
+								<h3 id="3">Uramaki</h3>
+
+								<div class="item item-img">
+									<img src="img/miku.jpg" class="img-main-item" alt="Yakimeshi">
+
+									<div class="subr">
+										<span class="item-desc">
+											<p class="tit">Moriawase<br></p>
+											<p class="desc">Tabla de veinte piezas de uramaki surtidas&nbsp;a elección del sushiman</p>
+										</span>
+
+										<span class="price">$&nbsp;2.900</span>
+									</div>
+								</div>
+								<p class="item">California<span>$&nbsp;750</span></p>
+								<p class="item">Philadelphia<span>$&nbsp;1.050</span></p>
+								<p class="item">Alaska<span>$&nbsp;1.050</span></p>
+								<p class="item">Spicy<span>$&nbsp;1.100</span></p>
+								<p class="item">Buenos Aires<span>$&nbsp;1.210</span></p>
+							</div>
+
+						<!-- SASHIMI -->
+							<div class="menu-section">
+								<h3 id="4">Sashimi</h3>
+
+								<p class="item">Besugo<span>$&nbsp;870</span></p>
+								<p class="item">Lenguado<span>$&nbsp;950</span></p>
+								<p class="item">Langostino<span>$&nbsp;1.090</span></p>
+								<p class="item">Atún<span>$&nbsp;1.200</span></p>
+								<p class="item">Salmón<span>$&nbsp;1.470</span></p>
+							</div>
+
+						<!-- BEBIDA -->
+							<div class="menu-section">
+								<h3 id="5">Bebida</h3>
+
+								<p class="item">Coca Cola<span>$&nbsp;330</span></p>
+								<p class="item">Fanta<span>$&nbsp;330</span></p>
+								<p class="item">Sprite<span>$&nbsp;330</span></p>
+								<p class="item">Schweppes<span>$&nbsp;330</span></p>
+							</div>
+
+					<footer>
+						<div class="social">
+							<!-- WhatsApp icon -->
+							<a href="http://www.whatsapp.com" draggable="false" target="_blank">
+								<svg id="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.33 69.33">
+									<g>
+									<path d="M45.43,21.33c-2.48-2-5.31-3.21-8.49-3.63-1.93-.25-3.85-.2-5.74,.2-3.75,.79-6.93,2.62-9.46,5.5-2.53,2.88-3.94,6.24-4.22,10.06-.15,1.98,.07,3.93,.6,5.84,.48,1.75,1.26,3.36,2.25,4.88,.1,.15,.14,.29,.08,.48-.56,2-1.12,4.01-1.68,6.05,.07,0,.1,0,.14-.01,2.02-.53,4.05-1.06,6.07-1.6,.21-.06,.37-.04,.56,.08,2.23,1.35,4.63,2.23,7.24,2.5,1.87,.2,3.72,.13,5.55-.29,3.95-.89,7.21-2.91,9.76-6.06,2.06-2.55,3.27-5.47,3.65-8.72,.22-1.88,.12-3.75-.3-5.6-.89-3.92-2.89-7.15-6.02-9.66Zm-.72,20.86c-.16,.38-.46,.66-.77,.92-.76,.64-1.61,1.13-2.58,1.33-1.09,.22-2.18,.17-3.24-.16-1.55-.48-3.07-1.05-4.49-1.85-1.94-1.1-3.59-2.54-5.09-4.17-1.1-1.2-2.09-2.5-2.96-3.87-.69-1.1-1.21-2.28-1.37-3.59-.03-.25-.04-.51-.06-.76,0-1.7,.66-3.12,1.87-4.3,.42-.4,.91-.61,1.49-.58,.32,.01,.65,.02,.97,.02,.33,0,.57,.14,.75,.4,.18,.25,.29,.54,.41,.82,.49,1.18,.98,2.35,1.47,3.53,.14,.33,.12,.63-.03,.96-.25,.55-.65,.99-1.04,1.44-.1,.12-.22,.23-.32,.35-.3,.34-.33,.55-.09,.95,.46,.78,.98,1.51,1.56,2.2,1.51,1.8,3.4,3.07,5.57,3.95,.49,.2,.74,.14,1.08-.27,.51-.61,1.03-1.21,1.5-1.86,.36-.5,.53-.56,1.11-.36,.32,.11,.63,.25,.94,.4,1.06,.51,2.12,1.04,3.18,1.53,.42,.2,.6,.49,.58,.94-.03,.72-.19,1.4-.46,2.06Z"/>
+									<path d="M34.67,0C15.52,0,0,15.52,0,34.67s15.52,34.67,34.67,34.67,34.67-15.52,34.67-34.67S53.81,0,34.67,0Zm20.65,35.9c-.27,4.29-1.74,8.14-4.42,11.5-3.02,3.79-6.92,6.22-11.64,7.34-1.5,.36-3.03,.5-4.6,.52-3.38-.04-6.6-.8-9.62-2.38-.19-.1-.36-.11-.57-.05-3.47,.91-6.95,1.82-10.43,2.73-.22,.06-.23,.02-.17-.18,.94-3.4,1.88-6.81,2.82-10.21,.04-.14,.04-.26-.04-.39-1.09-1.89-1.84-3.91-2.27-6.05-.36-1.8-.47-3.62-.35-5.45,.14-2.2,.64-4.31,1.47-6.35,.88-2.14,2.08-4.07,3.61-5.81,2.35-2.68,5.21-4.6,8.56-5.82,1.61-.59,3.27-.96,4.97-1.12,1.57-.15,3.14-.13,4.71,.07,3.54,.45,6.77,1.73,9.62,3.86,4.09,3.06,6.76,7.08,7.89,12.09,.42,1.88,.58,3.79,.45,5.71Z"/>
+									</g>
+								</svg>
+							</a>
+	
+							<!-- instagram icon -->
+							<a href="http://www.instagram.com" draggable="false" target="_blank">
+								<svg id="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.33 69.33">
+									<g>
+										<path d="M34.67,27.81c-3.79,0-6.86,3.07-6.86,6.86,0,3.79,3.07,6.86,6.86,6.86s6.86-3.07,6.86-6.86-3.07-6.86-6.86-6.86Z"/>
+										<path d="M50.72,22.52c-.33-.89-.86-1.7-1.54-2.37-.66-.68-1.47-1.21-2.37-1.54-1.22-.45-2.52-.69-3.82-.71-2.18-.1-2.82-.12-8.32-.12h0c-5.5,0-6.15,.02-8.32,.12-1.31,.02-2.6,.25-3.82,.71-.89,.33-1.7,.86-2.37,1.54-.68,.66-1.21,1.47-1.54,2.37-.45,1.22-.69,2.52-.71,3.82-.1,2.18-.12,2.82-.12,8.32s.02,6.15,.12,8.32c.02,1.31,.25,2.6,.71,3.82,.33,.89,.86,1.7,1.54,2.37,.66,.68,1.47,1.21,2.37,1.54,1.22,.45,2.52,.69,3.82,.71,2.18,.1,2.82,.12,8.32,.12s6.15-.02,8.32-.12c1.31-.02,2.6-.25,3.82-.71,1.8-.69,3.22-2.11,3.91-3.91,.45-1.22,.69-2.52,.71-3.82,.1-2.18,.12-2.82,.12-8.32s-.02-6.15-.12-8.32c-.01-1.31-.25-2.6-.71-3.82Zm-16.05,22.72c-5.84,0-10.57-4.73-10.57-10.57s4.73-10.57,10.57-10.57,10.57,4.73,10.57,10.57-4.73,10.57-10.57,10.57Zm10.99-19.1c-1.36,0-2.47-1.11-2.47-2.47s1.11-2.47,2.47-2.47,2.47,1.11,2.47,2.47-1.11,2.47-2.47,2.47Z"/>
+										<path d="M34.67,0C15.52,0,0,15.52,0,34.67s15.52,34.67,34.67,34.67,34.67-15.52,34.67-34.67S53.81,0,34.67,0Zm20.47,43.16c-.03,1.71-.36,3.4-.96,5-1.07,2.76-3.26,4.95-6.02,6.02-1.6,.6-3.29,.92-5,.96-2.2,.1-2.9,.12-8.49,.12s-6.29-.02-8.49-.12c-1.71-.03-3.4-.36-5-.96-1.37-.52-2.62-1.32-3.65-2.37-1.05-1.03-1.86-2.27-2.38-3.65-.6-1.6-.92-3.29-.96-5-.1-2.2-.12-2.9-.12-8.49s.02-6.29,.12-8.49c.03-1.71,.36-3.4,.96-5,.52-1.37,1.33-2.62,2.38-3.65,1.03-1.05,2.27-1.86,3.65-2.38,1.6-.6,3.29-.92,5-.96,2.2-.1,2.9-.12,8.49-.12s6.29,.02,8.49,.12c1.71,.03,3.4,.36,5,.96,1.37,.52,2.62,1.33,3.64,2.37,1.05,1.03,1.86,2.27,2.38,3.65,.6,1.6,.92,3.29,.96,5,.1,2.2,.12,2.9,.12,8.49s-.02,6.29-.12,8.49Z"/>
+									</g>
+								</svg>
+							</a>
+	
+							<!-- facebook icon -->
+							<a href="http://www.facebook.com" draggable="false" target="_blank">
+								<svg id="facebook-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.33 69.33">
+									<g>
+									<path d="M34.67,0C15.52,0,0,15.52,0,34.67s15.52,34.67,34.67,34.67,34.67-15.52,34.67-34.67S53.81,0,34.67,0Zm10.06,21.2h-4.04c-3.17,0-3.78,1.5-3.78,3.71v4.87h7.55l-.98,7.63h-6.57v19.57h-7.88v-19.57h-6.59v-7.63h6.58v-5.62c0-6.53,3.99-10.09,9.81-10.09,1.97,0,3.93,.09,5.89,.3v6.82Z"/>
+									</g>
+								</svg>
+							</a>
+	
+							<!-- Google Maps icon -->
+							<a href="http://maps.google.com" draggable="false" target="_blank">
+								<svg id="googlemaps-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69.33 69.33">
+									<g>
+									<path d="M34.65,23.27c-3.17,0-5.74,2.57-5.74,5.74,0,3.17,2.57,5.74,5.74,5.74s5.74-2.57,5.74-5.74-2.57-5.74-5.74-5.74Z"/>
+									<path d="M34.67,0C15.52,0,0,15.52,0,34.67s15.52,34.67,34.67,34.67,34.67-15.52,34.67-34.67S53.81,0,34.67,0Zm4.16,49.45c-3.04,4.7-2.2,7.53-4.16,7.53s-1.12-2.83-4.16-7.53c-6.38-8.97-14.61-16.41-9.15-27.38,5.19-10.66,21.43-10.65,26.61,0,5.46,10.95-2.77,18.43-9.15,27.38Z"/>
+									</g>
+								</svg>
+							</a>
 						</div>
-					</div>
-
-					<h3 id="2">Principal</h3><br>
-
-					<p id="productTitle">Yakimeshi<span>$ 990</span></p>
-					<p>Yakisoba<span>$ 990</span></p>
-					<p>Miso Ramen<span>$ 1.540</span></p>
-					<p>Shoyu Ramen<span>$ 1.540</span></p>
-					<p>Oyakodon<span>$ 1.400</span></p>
-					<p>Katsukare<span>$ 1.690</span></p>
-
-					<br><h3 id="3">Uramaki</h3><br>
-
-					<p>California<span>$ 750</span></p>
-					<p>Philadelphia<span>$ 1.050</span></p>
-					<p>Alaska<span>$ 1.050</span></p>
-					<p>Spicy<span>$ 1.100</span></p>
-					<p>Buenos Aires<span>$ 1.210</span></p>
-
-					<br><h3 id="4">Sashimi</h3><br>
-
-					<p>Besugo<span>$ 870</span></p>
-					<p>Lenguado<span>$ 950</span></p>
-					<p>Langostino<span>$ 1.090</span></p>
-					<p>Atún<span>$ 1.200</span></p>
-					<p>Salmón<span>$ 1.470</span></p>
-
-					<br><h3 id="5">Bebida</h3><br>
-
-					<p>Coca Cola<span>$ 330</span></p>
-					<p>Fanta<span>$ 330</span></p>
-					<p>Sprite<span>$ 330</span></p>
-					<p>Schweppes<span>$ 330</span></p>
+	
+						<div class="copyright"><a href="index-confirm.html" class="copy">FOOTER © 2022</a></div>
+						<style>.copy { color: hsl(0, 0%, 0%, .2); outline: none; text-decoration: none; } .copy:visited { color: hsl(0, 0%, 0%, .2); } </style>
+					</footer>
 				</div>
-				<footer>footer © 2022</footer>
 			</main>
 		</div>
 
-		<div id="crd-container" class="crd-container display-none">
-			<div id='card' class="card">
-				<!-- HEADER-CARD -->
-				<div class="top-crd">
-					<div class="title-y-closeicon">
-						<h1 class="title-card">Yakimeshi</h1>
+		<!-- CARD -->
+			<div id="crd-container" class="crd-container hidden">
+				<div id='card' class="card">
 
-						<!-- close icon card-->
-						<button id="close" class="close-button">
-							<svg xmlns="http://www.w3.org/2000/svg" class="close-icon-card" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-						</button>
+					<!-- HEADER-CARD -->
+					<div id="top-crd" class="top-crd">
+						<div class="title-y-closeicon">
+							<h1 class="title-card">Yakimeshi</h1>
+
+							<!-- close icon card-->
+							<button id="close" class="close-button">
+								<svg xmlns="http://www.w3.org/2000/svg" class="close-icon-card" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+							</button>
+						</div>
+
+						<p class="description more-txt-toggle">Salteado de arroz, huevo y vegetales al wok</p><!-- <span>ver&nbsp;más</span> -->
 					</div>
 
-					<p class="description">Salteado de arroz, huevo y vegetales al wok&nbsp;</p>
+					<!-- BODY-CARD -->
+					<div id="body-crd" class="middle-crd">
+						<div id="body-crd" class="one">
+							<img src="img/yakimeshi.jpg" class="img-crd" alt="Yakimeshi">
+						</div>
+
+						<!-- OPCIONALES / ADICIONALES -->
+						<div class="two">
+							<!--
+								choice
+								optional
+								additional
+								remove
+							-->
+
+							<form style="margin-bottom: 1.5rem;"  action="">
+								<!-- <div class="three data-client">
+									<input type="text" class="notas" placeholder="Nombre">
+									<input type="text" class="notas" placeholder="Teléfono">
+									<input type="text" class="notas" placeholder="Dirección">
+								</div> -->
+
+								<!-- <div class="modality-switch">
+									<span id="switch" class="switch-l"></span>
+									<input type="radio" name="modality" id="delivery" value="delivery" checked>
+									<label for="delivery" class="lbl-switch">Delivery</label>
+
+									<input type="radio" name="modality" id="takeaway" value="takeaway">
+									<label for="takeaway" class="lbl-switch">Take Away</label>
+								</div> -->
+							</form>
+
+							<div class="add-frm">
+								<form class="frm" action="">
+									<h3 class="opt-title">adicional <span class="limit"></span></h3>
+
+									<input type="checkbox" name="additional" id="pollo" value="190">
+									<label for="pollo" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_55" data-name="Grupo 55" transform="translate(-40 -358)">
+													<g class="str-ext" id="Elipse_41" data-name="Elipse 41" transform="translate(40 358)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<line class="str-int" id="Línea_115" data-name="Línea 115" x2="15" transform="translate(47.5 373)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+													<line class="str-int" id="Línea_116" data-name="Línea 116" y2="15" transform="translate(55 365.5)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Pollo
+										</span>
+										<span>+ $ 190</span>
+									</label>
+
+									<input type="checkbox" name="additional" id="lomo" value="200">
+									<label for="lomo" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_55" data-name="Grupo 55" transform="translate(-40 -358)">
+													<g class="str-ext" id="Elipse_41" data-name="Elipse 41" transform="translate(40 358)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<line class="str-int" id="Línea_115" data-name="Línea 115" x2="15" transform="translate(47.5 373)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+													<line class="str-int" id="Línea_116" data-name="Línea 116" y2="15" transform="translate(55 365.5)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Lomo
+										</span>
+										<span>+ $ 200</span>
+									</label>
+
+									<input type="checkbox" name="additional" id="cerdo" value="340">
+									<label for="cerdo" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_55" data-name="Grupo 55" transform="translate(-40 -358)">
+													<g class="str-ext" id="Elipse_41" data-name="Elipse 41" transform="translate(40 358)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<line class="str-int" id="Línea_115" data-name="Línea 115" x2="15" transform="translate(47.5 373)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+													<line class="str-int" id="Línea_116" data-name="Línea 116" y2="15" transform="translate(55 365.5)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Cerdo
+										</span>
+										<span>+ $ 340</span>
+									</label>
+
+									<input type="checkbox" name="additional" id="salmon" value="740">
+									<label for="salmon" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_55" data-name="Grupo 55" transform="translate(-40 -358)">
+													<g class="str-ext" id="Elipse_41" data-name="Elipse 41" transform="translate(40 358)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<line class="str-int" id="Línea_115" data-name="Línea 115" x2="15" transform="translate(47.5 373)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+													<line class="str-int" id="Línea_116" data-name="Línea 116" y2="15" transform="translate(55 365.5)" fill="none" stroke-linecap="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Salmón
+										</span>
+										<span>+ $ 740</span>
+									</label>
+								</form>
+
+								<form id="lpm" class="frm" action="" max="2">
+									<h3 class="opt-title">opcional <span class="limit"></span></h3>
+
+									<input type="checkbox" name="optional" id="soja" value="100">
+									<label for="soja" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_56" data-name="Grupo 56" transform="translate(-40 -303)">
+													<g class="str-ext" id="Elipse_49" data-name="Elipse 49" transform="translate(40 303)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<path class="str-int" id="Trazado_30" data-name="Trazado 30" d="M2237.8,357.055l3.682,4.3,8.837-8.959" transform="translate(-2189.057 -38.371)" fill="none"stroke-linecap="round" stroke-linejoin="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Soja
+										</span>
+										<span>+ $ 100</span>
+									</label>
+									
+									<input type="checkbox" name="optional" id="teriyaki" value="200">
+									<label for="teriyaki" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_56" data-name="Grupo 56" transform="translate(-40 -303)">
+													<g class="str-ext" id="Elipse_49" data-name="Elipse 49" transform="translate(40 303)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<path class="str-int" id="Trazado_30" data-name="Trazado 30" d="M2237.8,357.055l3.682,4.3,8.837-8.959" transform="translate(-2189.057 -38.371)" fill="none"stroke-linecap="round" stroke-linejoin="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Teriyaki
+										</span>
+										<span>+ $ 200</span>
+									</label>
+									
+									<input type="checkbox" name="optional" id="palitos" value="300">
+									<label for="palitos" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_56" data-name="Grupo 56" transform="translate(-40 -303)">
+													<g class="str-ext" id="Elipse_49" data-name="Elipse 49" transform="translate(40 303)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<path class="str-int" id="Trazado_30" data-name="Trazado 30" d="M2237.8,357.055l3.682,4.3,8.837-8.959" transform="translate(-2189.057 -38.371)" fill="none"stroke-linecap="round" stroke-linejoin="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Palitos
+										</span>
+										<span>+ $ 300</span>
+									</label>
+
+									<input type="checkbox" name="optional" id="wasabi" value="100">
+									<label for="wasabi" class="lbl">
+										<span class="add-icnTitle">
+											<svg class="add-icn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+												<g id="Grupo_56" data-name="Grupo 56" transform="translate(-40 -303)">
+													<g class="str-ext" id="Elipse_49" data-name="Elipse 49" transform="translate(40 303)" fill="none" stroke="gray" stroke-width="3">
+														<circle cx="15" cy="15" r="15" stroke="none"/>
+														<circle cx="15" cy="15" r="13.5" fill="none"/>
+													</g>
+													<path class="str-int" id="Trazado_30" data-name="Trazado 30" d="M2237.8,357.055l3.682,4.3,8.837-8.959" transform="translate(-2189.057 -38.371)" fill="none"stroke-linecap="round" stroke-linejoin="round" stroke="gray" stroke-width="4"/>
+												</g>
+											</svg>
+											Wasabi
+										</span>
+										<span>+ $ 100</span>
+									</label>
+								</form>
+							</div>
+					</div>
+
+						<!-- Notes -->
+						<div class="three">
+							<input type="text" class="notas" placeholder="notas">
+							<!-- <div class="text" id="first-red" data-placeholder="This is essentially an input" contenteditable="true" form-remote-input="remote-id"> --><!-- Must be no whitespace in here --><!-- </div> -->
+							<!-- <input type="hidden" id="remote-id" /> -->
+						</div>
+					</div>
+
+					<!-- FOOTER-CARD -->
+					<div class="bottom-crd">
+						<div class="plus-minus-icons">
+							<button id="minus" class="bg-icon minus-icon dis">
+								<svg xmlns="http://www.w3.org/2000/svg" class="m-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+							</button>
+
+							<div id="quant" class="quant"></div>
+
+							<button id="plus" class="bg-icon plus-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" class="p-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+							</button>
+						</div>
+
+						<div id="amount" class="amount"></div>
+					</div>
 				</div>
 
-				<!-- BODY-CARD -->
-				<div class="middle-crd customized-scrollbar">
-					<div class="one">
-						<img src="img/yakimeshi.jpg" class="img-crd" alt="Yakimeshi">
+				<button id="add-to-cart" class="btn">
+					<p>agregar</p>
+					<div class="total-price">
+						<svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
+						<p>$ 0.000</p>
 					</div>
-
-					<!-- OPCIONALES / ADICIONALES -->
-					<div class="two">
-						<form class="formulario" action="">
-							<h3 class="opt-title">adicional</h3>
-
-							<input type="radio" name="additional" id="pollo">
-							<label id="label-opt" for="pollo">
-								<div>
-									<span class="iconss"><svg xmlns="http://www.w3.org/2000/svg" class="opt-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg><svg xmlns="http://www.w3.org/2000/svg" class="additional-icon__hover" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
-									<span>Pollo</span>
-								</div>
-									<span>+ $ 190</span>
-							</label>
-							
-							<input type="radio" name="additional" id="lomo">
-							<label for="lomo">Lomo<span>+ $ 200</span></label>
-							
-							<input type="radio" name="additional" id="cerdo">
-							<label for="cerdo">Cerdo<span>+ $ 340</span></label>
-							
-							<input type="radio" name="additional" id="salmon">
-							<label for="salmon">Salmón<span>+ $ 740</span></label>
-						</form>
-
-						<form class="formulario" action="">
-							<h3 class="opt-title">opcional</h3>
-
-							<input type="checkbox" name="optional" id="soja">
-							<label for="soja">Soja<span>+ $ 190</span></label>
-							
-							<input type="checkbox" name="optional" id="teriyaki">
-							<label for="teriyaki">Teriyaki<span>+ $ 200</span></label>
-							
-							<input type="checkbox" name="optional" id="palitos">
-							<label for="palitos">Palitos<span>+ $ 340</span></label>
-						</form>
-					</div>
-
-					<!-- Notes -->
-					<div class="three">
-						<input type="text" class="notas" placeholder="notas">
-					</div>
-				</div>
-
-				<!-- FOOTER-CARD -->
-				<div class="bottom-crd">
-					<div class="plus-minus-icons">
-						<button id="minus" class="bg-icon minus-icon dis">
-							<svg xmlns="http://www.w3.org/2000/svg" class="m-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-						</button>
-
-						<div id="quant" class="quant"></div>
-
-						<button id="plus" class="bg-icon plus-icon">
-							<svg xmlns="http://www.w3.org/2000/svg" class="p-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-						</button>
-					</div>
-
-					<div id="amount" class="amount"><!-- $ 1.060 --></div>
-				</div>
+				</button>
 			</div>
-	
-			<button id="add-to-cart" class="btn">
-				<p>agregar</p>
-				<div class="total-price">
-					<svg xmlns="http://www.w3.org/2000/svg" class="cart-icon" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
-					<p>$ 0.000</p>
-				</div>
-			</button>
-		</div>
-
-		<script type='text/javascript' src='script.js'></script>
 	</body>
 </html>
+
+<!-- © 2022 REM -->

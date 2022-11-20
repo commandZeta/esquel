@@ -1,0 +1,23 @@
+:root {
+	--gray: #cfcfcf;
+	--gray-text: #7e7e7e;
+	--gray-shadow: #dbdbdb; 
+	--gray-2: #c0c0c0;
+	--gray-3: #9c9c9c;
+	--gray-5: #3d3d3d;
+}
+
+*, *::before, *::after { font-family: 'Flow Rounded', cursive; }
+
+form h3,
+button.btn > p,
+.c-producto p,
+.scroll-to a,
+.menu-section h3,
+.s-titulo,
+.title-card { font-family: 'Flow Circular', cursive; }
+
+.cover,
+.c-imagen,
+.img-crd,
+.img-main-item { filter: grayscale() brightness(1.1) contrast(.7); }
